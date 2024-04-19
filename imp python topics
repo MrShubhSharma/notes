@@ -1,0 +1,64 @@
+property decorator? 
+->
+The @property decorator is used to define properties in Python classes. Properties allow you to access and manipulate 
+attributes of an object as if they were normal attributes, while actually performing custom actions behind the scenes, such as validation or computation.
+
+
+mockey patching ?
+->
+Monkey patching is a programming technique where you modify or extend the behavior of code at runtime, typically by directly modifying or adding 
+to the code of classes or modules. It's often used in languages like Python, where you can dynamically alter classes or functions during execution.
+While it can be useful for quick fixes or experimentation, it can also lead to code that's hard to maintain or understand, so it's generally recommended 
+to use it judiciously and with caution.
+
+HTTP METHODS ?
+->
+GET: Used to request data from a specified resource. GET requests should only retrieve data and not modify anything on the server.
+POST: Used to submit data to be processed to a specified resource. POST requests are often used for creating new resources or sending 
+data that should be processed by the server.
+PUT: Used to update a resource with the data provided. It replaces the current representation of the target resource with the request payload.
+DELETE: Used to request the removal of a specified resource.
+PATCH: Used to apply partial modifications to a resource. It's often used when you want to apply only a part of an update to a resource,
+rather than replacing the entire resource.
+HEAD: Similar to GET, but it requests only the headers of the response, without the response body. It's often used to check the status of a 
+resource or to retrieve metadata about it.
+OPTIONS: Used to describe the communication options for the target resource. It specifies which HTTP methods are supported by the server for a particular resource.
+TRACE: Used to echo the received request so that a client can see what changes or additions have been made by intermediate servers.
+CONNECT: Used to establish a connection to a server through a proxy, typically for secure SSL/TLS connections (HTTPS).
+
+what is multiprocessing ?
+->  multiprocessing can be achieved using the multiprocessing module, which provides a way to create and manage processes. 
+
+how we can acheive multiprocesing in python ?
+->Multiprocessing in Python is useful for tasks that can be parallelized, such as CPU-bound tasks, intensive calculations, or I/O-bound tasks 
+that involve waiting for external resources.
+1.first import multiprocessing module .
+2. create a new process using the 'process' class from the 'multiprocessing' module .and define 
+the target function that the process will execute .
+#################################
+def my_function():
+    print("Hello from a multiprocessing process!")
+
+# Create a new process
+p = multiprocessing.Process(target=my_function)
+#####################################
+3.  start the start() method   {p.start()}
+4. : If you want to wait for the process to finish execution, you can use the join() method, which blocks the main program until the process terminates.    {p.join()}
+
+
+what are magic method ?
+Certainly! In Python, magic methods, also known as dunder methods (short for "double underscore"), are special methods that start and end with double underscores. These methods allow classes to emulate built-in types or implement specific functionality. The object class in Python serves as the base class for all other classes, and it contains several magic methods. Here are some of the commonly used magic methods in the object class:
+
+__init__(self[, ...]): This method is called when an instance of the class is initialized. It is used to initialize instance variables and perform any setup that's needed.
+__str__(self): This method is called when the str() function is used on an instance of the class or when the object is converted to a string implicitly (e.g., using print()). It should return a human-readable string representation of the object.
+__repr__(self): This method returns a string representation of the object that can be used to recreate the object. It is typically used for debugging and logging purposes.
+__len__(self): This method is called when the len() function is used on an instance of the class. It should return the length of the object.
+__getitem__(self, key): This method is called to implement the behavior of the indexing operator [] for accessing items in the object. It allows instances of the class to be treated like sequences or mappings.
+__setitem__(self, key, value): This method is called to implement the behavior of the assignment operator [] for setting items in the object.
+__delitem__(self, key): This method is called to implement the behavior of the del statement for deleting items from the object.
+__iter__(self): This method is called when the object is iterated over using a loop or other iterable context. It should return an iterator object.
+__next__(self): This method is called to retrieve the next item from the iterator returned by __iter__(). It should raise a StopIteration exception when there are no more items to iterate over.
+__contains__(self, item): This method is called when the in operator is used to check if an item is contained in the object. It should return True if the item is present, False otherwise.
+
+
+
